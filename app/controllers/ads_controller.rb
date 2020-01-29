@@ -1,6 +1,6 @@
 class AdsController < ApplicationController
    def New
-      @ad = Ad.new
+      @ad = Ad.new(params[:ad])
    end
 
    def show
