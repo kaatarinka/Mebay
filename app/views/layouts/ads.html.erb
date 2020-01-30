@@ -1,27 +1,24 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1/0 transitional// EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.orh/1999/xhtml">
+<!DOCTYPE html>
+<html>
 <head>
-
-    
+<title>Mebay</title>
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' %>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
+ <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h1 class="my-0 mr-md-auto font-weight-bold">Mebay</h1>
+  <nav class="my-2 my-md-0 mr-md-3">
+    <span class="p-2 text-dark"><%= link_to "All Ads", ads_path, {:class=> 'btn btn-secondary btn-sm'}  %></span>
+    <span class="p-2 text-dark"><%= link_to "New Ad", ads_new_path, {:class=> 'btn btn-secondary btn-sm'}  %></span>
+  </nav>
 
-<div id="wrapper">
-<div id="header">
-<div>
-<h1>Mebay</h1>
-<ul id="nav">
-<li><a href="/ads/">All Ads</a></li>
-</ul>
 </div>
-</div>
-<div id="content">
+
 <%= yield %>
 </div>
-<div id="clearfooter"></div>
-</div>
-<div id="footer"></div>
-
 </body>
 </html>

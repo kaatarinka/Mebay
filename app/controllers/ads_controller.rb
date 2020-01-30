@@ -1,6 +1,11 @@
 class AdsController < ApplicationController
    def New
-      @ad = Ad.new(params[:ad])
+      @ad = Ad.new
+   end
+
+   def create
+      @ad = Ad.new(params[:ad])   
+      @ad.save
    end
 
    def show
@@ -10,4 +15,6 @@ class AdsController < ApplicationController
    def index
    @ads = Ad.all
    end
+  
 end
+
